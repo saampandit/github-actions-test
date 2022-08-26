@@ -1,5 +1,5 @@
 name: PostgreSQL Service Example
-on: push
+on: pull_request
 jobs:
   postgres-job:
     runs-on: ubuntu-latest
