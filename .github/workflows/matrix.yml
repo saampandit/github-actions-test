@@ -17,6 +17,8 @@ jobs:
           - os: ubuntu-latest
             node_version: 8
     runs-on: ${{ matrix.os }}
+    env:
+      IS_UBUNTU_10: ${{ matrix.is_ubuntu_10 }}
     steps:
       - name: Log Node Version
         run: npm -v
@@ -24,4 +26,6 @@ jobs:
         with:
           node-version: ${{ matrix.node_version }}
       - name: Log node version
-        run: node -v
+        run: | 
+          node -v
+          echo $IS_UBUNTU_10
